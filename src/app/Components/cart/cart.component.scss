@@ -1,0 +1,46 @@
+.header {
+    height: 40vh;
+    background: url("../../../assets/empty-cart-title-image.jpg") center no-repeat;
+    background-size: cover;
+
+    h1 {
+        font-size: 5rem !important;
+    }
+}
+
+.container {
+    i {
+        font-size: 25px;
+        transition: .3s !important;
+    }
+
+    input {
+        width: 60px;
+        border: 1px solid #CCC;
+        outline: none;
+    }
+}
+
+.container {
+    .fa-cart-shopping {
+        font-size: 10rem !important;
+    }
+}
+.place-order, .go-to-products {
+    padding: 10px 20px;
+    background-color: #0CC3CE;
+    border: none;
+    outline: none;
+    &:hover {
+        background-color: black;
+    }
+}
+.clear-cart {
+    padding: 10px 20px;
+    background-color: black;
+    border: none;
+    outline: none;
+    &:hover {
+        background-color: #0CC3CE;
+    }
+}

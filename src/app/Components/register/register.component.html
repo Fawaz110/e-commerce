@@ -1,0 +1,113 @@
+<div class="container md-70">
+    <div class="row h-100 rounded overflow-hidden bg-body-tertiary align-items-center shadow">
+        <div class="col-7 d-none d-md-block h-100"></div>
+        <div class="col-md-5 text-center">
+
+
+            <form class="example-form">
+                <h1 class="display-1 mb-2"><span>R</span>egister</h1>
+                <div class="form p-2">
+                    <form [formGroup]="registerForm" (ngSubmit)="register()">
+                        <div class="row justify-content-between mb-2">
+                            <div class="col-md-6">
+                                <mat-form-field class="w-100" appearance="outline">
+                                    <mat-label>Name</mat-label>
+                                    <input type="text" matInput placeholder="Ex. Fawaz" formControlName="name">
+
+                                    
+                                    <mat-error
+                                        *ngIf="this.registerForm.get('name')?.getError('required') && this.registerForm.get('name')?.touched">
+                                        Name is <strong>Required</strong>
+                                    </mat-error>
+                                    <mat-error
+                                        *ngIf="this.registerForm.get('name')?.getError('minlength') && this.registerForm.get('name')?.touched">
+                                        Minimum length is <strong>3 characters</strong>
+                                    </mat-error>
+                                    <mat-error
+                                        *ngIf="this.registerForm.get('name')?.getError('maxlength') && this.registerForm.get('name')?.touched">
+                                        Maximum length is <strong>20 characters</strong>
+                                    </mat-error>
+                                    <mat-error
+                                        *ngIf="this.registerForm.get('name')?.getError('pattern') && this.registerForm.get('name')?.touched">
+                                        start with <strong>Uppercase character</strong>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="w-100" appearance="outline">
+                                    <mat-label>Email</mat-label>
+                                    <input type="email" matInput placeholder="Ex. pat@example.com"
+                                        formControlName="email">
+                                    <mat-error
+                                        *ngIf="this.registerForm.get('email')?.getError('required') && this.registerForm.get('email')?.touched">
+                                        E-mail is <strong>Required</strong>
+                                    </mat-error>
+                                    <mat-error
+                                        *ngIf="this.registerForm.get('email')?.getError('email') && this.registerForm.get('email')?.touched">
+                                        Enter a <strong>valid E-mail</strong>
+                                    </mat-error>
+
+                                </mat-form-field>
+                            </div>
+
+                        </div>
+                        <div class="row justify-content-between mb-2">
+                            <div class="col-md-6">
+                                <mat-form-field class="w-100" appearance="outline">
+                                    <mat-label>Password</mat-label>
+                                    <input (keyup)="passwordMatch()" matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                                    <button type="button" mat-icon-button matSuffix (click)="hide = !hide"
+                                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                    </button>
+                                    <mat-error
+                                        *ngIf="this.registerForm.get('password')?.getError('required') && this.registerForm.get('password')?.touched">
+                                        E-mail is <strong>Required</strong>
+                                    </mat-error>
+                                    <mat-error
+                                        *ngIf="this.registerForm.get('password')?.getError('pattern') && this.registerForm.get('password')?.touched">
+                                        Password must contain a <strong>Uppercase letter, number, special
+                                            character</strong>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="w-100" appearance="outline">
+                                    <mat-label>Re-Password</mat-label>
+                                    <input (keyup)="passwordMatch()" matInput [type]="hide ? 'password' : 'text'"
+                                        formControlName="rePassword">
+                                    <button type="button" mat-icon-button matSuffix (click)="hide = !hide"
+                                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                    </button>
+                                    <mat-error *ngIf="!matching && this.registerForm.get('rePassword')?.touched">
+                                        Password not <strong>Match</strong>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <mat-form-field class="w-100" appearance="outline">
+                                <mat-label>Phone Number</mat-label>
+                                <input type="text" matInput placeholder="Ex. 01234567899" formControlName="phone">
+                                <mat-error *ngIf="this.registerForm.get('phone')?.getError('required') && this.registerForm.get('phone')?.touched">
+                                    Phone number is <strong>Required</strong>
+                                </mat-error>
+                                <mat-error *ngIf="this.registerForm.get('phone')?.getError('pattern') && this.registerForm.get('phone')?.touched">
+                                    Enter a <strong>Valid</strong> phone number
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="row flex-row-reverse">
+                            <div class="col-12 mb-1">
+                                <button type="submit" [disabled]="this.registerForm.status != 'VALID'" class="w-100 mb-3" mat-raised-button>Register</button>
+                                <p class="text-body-tertiary already-registered">Already registered? <a routerLink="/login">login</a></p>
+                            </div>
+                        </div>
+                        <mat-error *ngIf="this.errorMsg">Account is already <strong>Exists</strong></mat-error>
+                    </form>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<section class="bg-body-tertiary ">
+    <div class="container py-4 d-flex align-items-center justify-content-between">
+        <h2>Shop</h2>
+        <p class="text-xxl-center">Suprema/<span>{{this.productDetails?.title.split(' ').splice(0,2).join(' ')}}</span>
+        </p>
+    </div>
+</section>
+<section>
+    <div class="container py-5">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-4 p-2">
+                <owl-carousel-o [options]="customOptions">
+                    <ng-container *ngFor="let ImgSrc of this.productDetails?.images">
+                        <ng-template carouselSlide>
+                            <img [src]="ImgSrc">
+                        </ng-template>
+                    </ng-container>
+                </owl-carousel-o>
+            </div>
+            <div class="col-md-4 p-2">
+                <h3 class="text-dark">{{this.productDetails?.title}}</h3>
+                <h5 class="text-body-tertiary">{{this.productDetails?.price | currency:'EGP '}}</h5>
+                <p class="text-body-tertiary">{{productDetails?.description}}</p>
+                <ul class="list-unstyled text-body-tertiary mb-5">
+                    <li class="mb-2">
+                        <p><b>Brand:</b> {{productDetails?.brand.name}}</p>
+                    </li>
+                    <li class="mb-2">
+                        <p><b>Category:</b> <a>{{productDetails?.category.name}}</a></p>
+                    </li>
+                    <li class="mb-2">
+                        <p><b>Brand:</b> {{productDetails?.brand.name}}</p>
+                    </li>
+                </ul>
+                <div class="container m-0">
+                    <div class="row mb-3">
+                        <div class="col-5 p-0">
+                            <div class="add-to-cart cursor-pointer text-light d-flex justify-content-between align-items-center">
+                                <p class="m-0 px-2">Add to Cart</p>
+                                <div class="icon d-flex justify-content-center align-items-center">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5 p-0">
+                            <div class="inner d-flex align-items-center cursor-pointer" (click)="toggleFromWishList(productDetails?._id)">
+                                <i *ngIf="!addedToWishlist" class="fa-regular fa-heart me-2"></i>
+                                <i *ngIf="addedToWishlist" class="fa-solid fa-heart me-2"></i>
+                                <p class="m-0 small">Add to Wishlist</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

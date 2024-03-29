@@ -1,0 +1,19 @@
+<section>
+    <div class="container py-5">
+        <div class="form w-75 m-auto">
+            <span class="text-success">We sent a code.<i class="fa-solid fa-circle-check"></i></span>
+            <h2 class="display-5 mb-5">Enter the reset Code: </h2>
+            <form [formGroup]="varifyForm">
+                <mat-form-field class="w-100 mb-4">
+                    <mat-label>Reset Code</mat-label>
+                    <input type="text" matInput formControlName="resetCode" placeholder="Ex. 12345">
+                    <mat-error *ngIf="varifyForm.get('resetCode')?.getError('required')">
+                        this field is <strong>required</strong>!
+                    </mat-error>
+                </mat-form-field>
+                <button [disabled]="varifyForm.status != 'VALID'" type="submit" class="w-100" (click)="varifyCode()"
+                    mat-raised-button>Varify Code</button>
+            </form>
+        </div>
+    </div>
+</section>

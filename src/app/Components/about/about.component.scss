@@ -1,0 +1,44 @@
+
+.about {
+    background: url("../../../assets/about-me.jpeg") no-repeat;
+    background-position: 0 -180px;
+    height: 85vh;
+    background-size: cover;
+    
+    .social-item {
+        .inner {
+            width: fit-content;
+    
+            .icon {
+                width: 30px;
+                height: 30px;
+                border-radius: 3px;
+                font-size: 20px;
+            }
+    
+            .main-icon {
+                background-color: #EEE;
+                transition: .3s !important;
+            }
+    
+            .hovered-icon {
+                top: 120%;
+                left: 0;
+                background-color: #0cc3ce;
+                transition: .3s !important;
+            }
+    
+    
+            &:hover {
+                .main-icon {
+                    transform: translateY(-120%);
+                }
+    
+                .hovered-icon {
+                    transform: translateY(-120%);
+                    transition-delay: 0 !important;
+                }
+            }
+        }
+    }
+}

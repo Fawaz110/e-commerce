@@ -1,0 +1,30 @@
+.header {
+    background: url("../../../assets/faq-1-title-image.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.btn-message {
+    background-color: black;
+
+    &:hover {
+        background-color: #0CC3CE;
+
+        a {
+            color: #FFF !important;
+        }
+    }
+
+}
+
+.btn-phone {
+    background-color: black;
+
+    &:hover {
+        background-color: #3e3e3e;
+
+        a {
+            color: #FFF !important;
+        }
+    }
+
+}

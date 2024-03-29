@@ -1,0 +1,23 @@
+.container {
+
+
+    .col-7 {
+        background: url("../../../assets/my-account-title-image.jpg") no-repeat center;
+        background-size: cover;
+    }
+
+    button[type="submit"] {
+        margin-right: 12px;
+    }
+}
+.reset-password a{
+    color: #0CC3CE !important;
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+    .md-70 {
+        height: 70vh;
+    }
+
+}

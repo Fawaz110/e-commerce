@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row" *ngIf="this._WishListService.wishListitems.value.length != 0;else isEmpty">
+        <div class="col-md-3 p-3" *ngFor="let product of this._WishListService.wishListitems.value">
+            <div class="inner border-bottom h-100">
+                <app-product-item [product]="product" [wishList]="true"></app-product-item>
+            </div>
+        </div>
+    </div>
+    <ng-template #isEmpty>
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-4 p-2">
+                <img class="w-100" src="./assets/6203040_3173478.jpg" alt="">
+            </div>
+            <div class="col-md-8 p-2">
+                <h1 class="display-1 mb-4 text-body-tertiary">Sorry, Wishlist is Empty</h1>
+                <button class="text-light home-btn" routerLink="/home">Go to Home Page</button>
+            </div>
+        </div>
+    </ng-template>
+</div>

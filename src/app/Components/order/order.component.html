@@ -1,0 +1,53 @@
+<section class="bg-body-tertiary mb-5">
+    <div class="container py-4 d-flex align-items-center justify-content-between">
+        <h2>Shop</h2>
+        <p class="text-xxl-center">Suprema/<span>Order</span>
+        </p>
+    </div>
+</section>
+<section *ngIf="!orderedCash;else cash">
+    <div class="container d-flex align-items-center justify-content-center mb-5">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <form [formGroup]="orderForm">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>City</mat-label>
+                        <input matInput placeholder="Ex. Cairo" type="text" formControlName="city">
+                    </mat-form-field>
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Phone Number</mat-label>
+                        <input matInput placeholder="Ex. 01091147893" type="tel" formControlName="phone">
+                    </mat-form-field>
+
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Address</mat-label>
+                        <textarea matInput placeholder="Leave details about address..."
+                            formControlName="details"></textarea>
+                    </mat-form-field>
+                    <button mat-raised-button color="primary" class="me-2" type="submit" (click)="checkout()">Online Payment</button>
+                    <button mat-stroked-button color="primary" type="submit" (click)="cashOnDelivery()">Cash On
+                        delivery</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<ng-template #cash>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-12">
+                <div class="inner d-flex align-items-center justify-content-center">
+                    <i class="fa-brands fa-opencart me-lg-5 text-body-tertiary"></i>
+                    <div class="body">
+                        <div class="text mb-4">
+                            <h1 class="display-1 text-body-tertiary">Order Confirmed</h1>
+                            <span class="display-6">Cash on delivry</span>
+                        </div>
+                        <button class="text-light home" routerLink="/home">Go to Home Page</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

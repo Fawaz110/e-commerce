@@ -1,0 +1,61 @@
+<section>
+    <div class="container py-5">
+        <div class="form w-75 m-auto">
+            <h2 class="display-6 mb-5">Update your own data.</h2>
+            <form [formGroup]="userDataForm">
+                <mat-form-field class="w-100 mb-2">
+                    <mat-label>Name</mat-label>
+                    <input type="text" matInput placeholder="Ex. Fawaz" formControlName="name">
+                    <mat-error
+                        *ngIf="this.userDataForm.get('name')?.getError('required') && this.userDataForm.get('name')?.touched">
+                        Name is <strong>Required</strong>
+                    </mat-error>
+                    <mat-error
+                        *ngIf="this.userDataForm.get('name')?.getError('minlength') && this.userDataForm.get('name')?.touched">
+                        Minimum length is <strong>3 characters</strong>
+                    </mat-error>
+                    <mat-error
+                        *ngIf="this.userDataForm.get('name')?.getError('maxlength') && this.userDataForm.get('name')?.touched">
+                        Maximum length is <strong>20 characters</strong>
+                    </mat-error>
+                    <mat-error
+                        *ngIf="this.userDataForm.get('name')?.getError('pattern') && this.userDataForm.get('name')?.touched">
+                        start with <strong>Uppercase character</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="w-100 mb-2">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput placeholder="Ex. pat@example.com"
+                        formControlName="email">
+                    <mat-error
+                        *ngIf="this.userDataForm.get('email')?.getError('required') && this.userDataForm.get('email')?.touched">
+                        E-mail is <strong>Required</strong>
+                    </mat-error>
+                    <mat-error
+                        *ngIf="this.userDataForm.get('email')?.getError('email') && this.userDataForm.get('email')?.touched">
+                        Enter a <strong>valid E-mail</strong>
+                    </mat-error>
+
+                </mat-form-field>
+
+                <mat-form-field class="w-100 mb-2">
+                    <mat-label>Phone Number</mat-label>
+                    <input type="text" matInput placeholder="Ex. 01234567899" formControlName="phone">
+                    <mat-error *ngIf="this.userDataForm.get('phone')?.getError('required') && this.userDataForm.get('phone')?.touched">
+                        Phone number is <strong>Required</strong>
+                    </mat-error>
+                    <mat-error *ngIf="this.userDataForm.get('phone')?.getError('pattern') && this.userDataForm.get('phone')?.touched">
+                        Enter a <strong>Valid</strong> phone number
+                    </mat-error>
+                </mat-form-field>
+
+                <div class="row flex-row-reverse">
+                    <div class="col-12 mb-1">
+                        <button type="submit" [disabled]="this.userDataForm.status != 'VALID'" class="w-100" mat-raised-button>Update Data</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

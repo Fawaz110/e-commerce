@@ -1,0 +1,45 @@
+<div class="container md-70">
+    <div class="row h-100 rounded overflow-hidden bg-body-tertiary align-items-center shadow">
+        <div class="col-7 d-none d-md-block h-100"></div>
+        <div class="col-md-5 text-center">
+            <form class="example-form">
+                <h1 class="display-1 mb-2"><span>L</span>ogin</h1>
+                <div class="form p-2">
+                    <form [formGroup]="loginForm" (ngSubmit)="login()">
+                        <div class="row justify-content-between mb-2">
+                            <div class="col-12">
+                                <mat-form-field class="w-100" appearance="outline">
+                                    <mat-label>Email</mat-label>
+                                    <input type="email" matInput placeholder="Ex. pat@example.com"
+                                        formControlName="email">
+                                </mat-form-field>
+                            </div>
+
+                        </div>
+                        <div class="row justify-content-between mb-2">
+                            <div class="col-12">
+                                <mat-form-field class="w-100" appearance="outline">
+                                    <mat-label>Password</mat-label>
+                                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                                    <button type="button" mat-icon-button matSuffix (click)="hide = !hide"
+                                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                    </button>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row flex-row-reverse">
+                            <div class="col-12 mb-1">
+                                <button type="submit" (click)="login()" class="w-100 mb-3"
+                                    mat-raised-button>Login</button>
+                                <p class="text-body-tertiary reset-password">Forgot password? <a routerLink="/setting">reset password</a></p>
+                            </div>
+                        </div>
+                        <mat-error *ngIf="this.errorMsg">Incorrect <strong>E-mail</strong> or
+                            <strong>Password</strong></mat-error>
+                    </form>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

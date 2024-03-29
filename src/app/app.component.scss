@@ -1,0 +1,45 @@
+.btn-scroll {
+    padding: 25px;
+    // background-color: #3e3e3e;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    bottom: 105%;
+    right: 50px;
+    color: #adadad;
+    border: 1px solid #adadad;
+    transition: .6s !important;
+    opacity: 0;
+
+    i {
+        transition: .3s !important;
+    }
+
+    &:hover {
+        border-color: #0CC3CE;
+        background-color: #0CC3CE;
+        color: #FFF;
+    }
+}
+
+.btn-bottom {
+    bottom: 50px;
+    opacity: 1;
+}
+
+.setting {
+    position: fixed;
+    top: 30%;
+    right: 0;
+    transform: translateX(65px);
+
+    .icon {
+        font-size: 20px;
+        background-color: #0CC3CE;
+    }
+
+    z-index: 9999999;
+    &:hover {
+        transform: translateX(0);
+    }
+}

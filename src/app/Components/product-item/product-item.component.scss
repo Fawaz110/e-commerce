@@ -1,0 +1,124 @@
+.item {
+    .header {
+        .cart {
+            bottom: -50%;
+            left: 0;
+            right: 0;
+
+            .icon {
+                width: 56px;
+                height: 56px;
+                transition: .3s !important;
+            }
+        }
+    }
+
+    .layer {
+        top: 102%;
+        left: 0;
+        right: 0;
+        height: 100%;
+        transition: .6s !important;
+
+        .btn {
+            padding: 10px 20px;
+            width: 80%;
+            transition: 1s !important;
+            opacity: 0;
+        }
+
+        .btn-1 {
+            background-color: black;
+            transform: translateY(-200%);
+
+            &:hover {
+                background-color: #0CC3CE;
+            }
+        }
+
+        .btn-2 {
+            background-color: #0CC3CE;
+            transform: translateY(200%);
+
+            &:hover {
+                background-color: black;
+            }
+        }
+    }
+
+    &:hover {
+        .header {
+            img[class="w-100"] {
+                transform: translateY(-98%);
+            }
+
+            img[class="w-100 position-absolute"] {
+                top: 0;
+            }
+
+            .cart {
+                bottom: 0;
+            }
+
+            .layer {
+                top: 0;
+
+                .btn-1,
+                .btn-2 {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .cart {
+        &:hover {
+            .icon {
+                background-color: #0CC3CE;
+            }
+        }
+    }
+
+    img[class="w-100 position-absolute"] {
+        top: 100%;
+        left: 0;
+    }
+
+    img[class="w-100"],
+    img[class="w-100 position-absolute"] {
+        transition: .8s !important;
+    }
+
+    .body {
+        .top {
+            span {
+                font-size: 11px !important;
+
+                &:hover {
+                    color: #0CC3CE !important;
+                }
+            }
+        }
+
+        h5 {
+            width: fit-content;
+
+            &:hover {
+                color: #535252 !important;
+            }
+        }
+    }
+}
+
+.on-sale,
+.out-of-stock {
+    top: 10%;
+    right: -35%;
+    z-index: 2;
+    rotate: 45deg;
+}
+
+.on-sale {
+    background-color: #09c;
+}

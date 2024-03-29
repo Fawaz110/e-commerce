@@ -1,0 +1,288 @@
+<header class="bg-body-tertiary">
+    <owl-carousel-o [options]="headerOptions">
+        <ng-template carouselSlide>
+            <div class="item py-5 slide-1">
+                <div class="container py-5">
+                    <div class="row py-3">
+                        <div class="col-6">
+                            <h1 class="display-1">Mid Season Sale.</h1>
+                            <p class="display-6">Stock up on sportswear and limited edition collections on our awesome
+                                mid-season sale.</p>
+                            <button class="btn btn-1 rounded-0 me-2">Find Out More</button>
+                            <button class="btn btn-2 rounded-0">Shop the Sale</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template carouselSlide>
+            <div class="item py-5 slide-2">
+                <div class="container py-5">
+                    <div class="row py-3">
+                        <div class="col-6">
+                            <h1 class="display-1">Best Selling</h1>
+                            <p class="display-6">Stock up on sportswear and limited edition collections on our</p>
+                            <button class="btn btn-1 rounded-0 me-2">Find Out More</button>
+                            <button class="btn btn-2 rounded-0">Shop the Sale</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template carouselSlide>
+            <div class="item py-5 slide-3">
+                <div class="container py-5">
+                    <div class="row py-3">
+                        <div class="col-6">
+                            <h1 class="display-1">Best Selling</h1>
+                            <p class="display-6">Stock up on sportswear and limited edition collections on our</p>
+                            <button class="btn btn-1 rounded-0 me-2">Find Out More</button>
+                            <button class="btn btn-2 rounded-0">Shop the Sale</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template carouselSlide>
+            <div class="item py-5 slide-4">
+                <div class="container py-5">
+                    <div class="row py-3">
+                        <div class="col-6">
+                            <h1 class="display-1">Best Selling</h1>
+                            <p class="display-6">Stock up on sportswear and limited edition collections on our</p>
+                            <button class="btn btn-1 rounded-0 me-2">Find Out More</button>
+                            <button class="btn btn-2 rounded-0">Shop the Sale</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </owl-carousel-o>
+    <div class="container-fluid py-4">
+        <div class="row justify-content-evenly">
+            <div class="col-md-2 p-2">
+                <div *ngFor="let cat of this.categories;let i = index" class="cat overflow-hidden">
+                    <div class="inner position-relative d-flex justify-content-center align-items-center "
+                        *ngIf="(this.categories[i].slug=='beauty-and-health')">
+                        <img class="w-100" src="./assets/home-shop-1-image-1.jpg" alt="">
+                        <div
+                            class="content bg-dark bg-opacity-75 position-absolute d-flex align-items-center justify-content-center">
+                            <p class="m-0">{{cat?.name}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 p-2">
+                <div *ngFor="let cat of this.categories;let i = index" class="cat overflow-hidden">
+                    <div class="inner position-relative d-flex justify-content-center align-items-center "
+                        *ngIf="(this.categories[i].slug=='women\'s-fashion')">
+                        <img class="w-100" src="./assets/home-shop-1-image-2.jpg" alt="">
+                        <div
+                            class="content bg-dark bg-opacity-75 position-absolute d-flex align-items-center justify-content-center">
+                            <p class="m-0">{{cat?.name}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 p-2">
+                <div *ngFor="let cat of this.categories;let i = index" class="cat overflow-hidden">
+                    <div class="inner position-relative d-flex justify-content-center align-items-center "
+                        *ngIf="(this.categories[i].slug=='men\'s-fashion')">
+                        <img class="w-100" src="./assets/home-shop-1-image-3.jpg" alt="">
+                        <div
+                            class="content bg-dark bg-opacity-75 position-absolute d-flex align-items-center justify-content-center">
+                            <p class="m-0">{{cat?.name}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 p-2">
+                <div *ngFor="let cat of this.categories;let i = index" class="cat overflow-hidden">
+                    <div class="inner position-relative d-flex justify-content-center align-items-center "
+                        *ngIf="(this.categories[i].slug=='baby-and-toys')">
+                        <img class="w-100" src="./assets/home-shop-1-image-4.jpg" alt="">
+                        <div
+                            class="content bg-dark bg-opacity-75 position-absolute d-flex align-items-center justify-content-center">
+                            <p class="m-0">{{cat?.name}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 p-2">
+                <div *ngFor="let cat of this.categories;let i = index" class="cat overflow-hidden">
+                    <div class="inner position-relative d-flex justify-content-center align-items-center "
+                        *ngIf="(this.categories[i].slug=='mobiles')">
+                        <img class="w-100" src="./assets/home-shop-1-image-5.jpg" alt="">
+                        <div
+                            class="content bg-dark bg-opacity-75 position-absolute d-flex align-items-center justify-content-center">
+                            <p class="m-0">{{cat?.name}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container py-5">
+    <div class="header text-center my-5 overflow-hidden">
+        <span class="text-body-tertiary">New Products</span>
+        <h2>Shop The New Collection</h2>
+    </div>
+    <owl-carousel-o [options]="productsCarousel">
+        <ng-container *ngFor="let product of this.products?.slice(0,8)">
+            <ng-template carouselSlide>
+                <div class="inner mx-3 h-100">
+                    <app-product-item [product]="product"></app-product-item>
+                </div>
+            </ng-template>
+        </ng-container>
+    </owl-carousel-o>
+</div>
+<section class="limited text-light py-5">
+    <div class="container text-center p-5">
+        <h2 class="display-2 mb-3">Shop Limited Edition.</h2>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+            tincidunt ut laoreet dolore.</p>
+
+        <button class="btn btn-1 rounded-0 me-2">Find Out More</button>
+        <button class="btn btn-2 rounded-0">Shop the Sale</button>
+    </div>
+</section>
+<div class="container py-5">
+    <div class="header text-center my-5 overflow-hidden">
+        <span class="text-body-tertiary">New Products</span>
+        <h2>Shop The New Collection</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-3 p-3" *ngFor="let product of this.products.slice(8,16)">
+            <div class="inner border-bottom h-100">
+                <app-product-item [product]="product"></app-product-item>
+            </div>
+        </div>
+    </div>
+</div>
+<section>
+    <div class="free-banner py-5">
+        <div class="container py-5">
+            <div class="d-flex align-items-center justify-content-between px-2">
+                <h2 class="h1 text-light">Free Shipping Wordwide.</h2>
+                <button class="shop-now btn btn-2 rounded-0 px-4 py-3">Shop Now!</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-4 p-2">
+                <div class="head mb-4 d-flex align-items-center justify-content-between">
+                    <h4 class="m-0 me-2">Featured</h4>
+                    <div></div>
+                </div>
+                <div class="item mb-2">
+                    <div class="inner row align-items-center">
+                        <div class="image col-3 pe-2">
+                            <img class="w-100" src="./assets/shop-standard-11.jpg" alt="">
+                        </div>
+                        <div class="col-9">
+                            <a>White x Black Backpack</a>
+                            <ul class="list-unstyled d-flex align-items-center">
+                                <li class="me-2"><a class="text-body-tertiary small">Accessories,</a></li>
+                                <li class="me-2"><a class="text-body-tertiary small">Men,</a></li>
+                                <li class="me-2"><a class="text-body-tertiary small">Sports wear</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item mb-2">
+                    <div class="inner row align-items-center">
+                        <div class="image col-3 pe-2">
+                            <img class="w-100" src="./assets/shop-standard-10-277x300.jpg" alt="">
+                        </div>
+                        <div class="col-9">
+                            <a>White x Black Backpack</a>
+                            <ul class="list-unstyled d-flex align-items-center">
+                                <li class="me-1"><a class="text-body-tertiary small">Accessories,</a></li>
+                                <li class="me-1"><a class="text-body-tertiary small">Men,</a></li>
+                                <li class="me-1"><a class="text-body-tertiary small">Sports wear</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item mb-2">
+                    <div class="inner row align-items-center">
+                        <div class="image col-3 pe-2">
+                            <img class="w-100" src="./assets/shop-standard-9-277x300.jpg" alt="">
+                        </div>
+                        <div class="col-9">
+                            <a>Striped Slip-On</a>
+                            <ul class="list-unstyled d-flex align-items-center">
+                                <li class="me-1"><a class="text-body-tertiary small">Accessories,</a></li>
+                                <li class="me-1"><a class="text-body-tertiary small">Shoes,</a></li>
+                                <li class="me-1"><a class="text-body-tertiary small">Women</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 p-2">
+                <div class="head mb-4 d-flex align-items-center justify-content-between">
+                    <h4 class="mb-0 me-2">Sale</h4>
+                    <div></div>
+                </div>
+                <div class="item mb-2">
+                    <div class="inner row align-items-center">
+                        <div class="image col-3 pe-2">
+                            <img class="w-100" src="./assets/shop-standard-11.jpg" alt="">
+                        </div>
+                        <div class="col-9">
+                            <a>White x Black Backpack</a>
+                            <ul class="list-unstyled d-flex align-items-center">
+                                <li class="me-2"><a class="text-body-tertiary small">Accessories,</a></li>
+                                <li class="me-2"><a class="text-body-tertiary small">Men,</a></li>
+                                <li class="me-2"><a class="text-body-tertiary small">Sports wear</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item mb-2">
+                    <div class="inner row align-items-center">
+                        <div class="image col-3 pe-2">
+                            <img class="w-100" src="./assets/shop-standard-10-277x300.jpg" alt="">
+                        </div>
+                        <div class="col-9">
+                            <a>White x Black Backpack</a>
+                            <ul class="list-unstyled d-flex align-items-center">
+                                <li class="me-1"><a class="text-body-tertiary small">Accessories,</a></li>
+                                <li class="me-1"><a class="text-body-tertiary small">Men,</a></li>
+                                <li class="me-1"><a class="text-body-tertiary small">Sports wear</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item mb-2">
+                    <div class="inner row align-items-center">
+                        <div class="image col-3 pe-2">
+                            <img class="w-100" src="./assets/shop-standard-9-277x300.jpg" alt="">
+                        </div>
+                        <div class="col-9">
+                            <a>Striped Slip-On</a>
+                            <ul class="list-unstyled d-flex align-items-center">
+                                <li class="me-1"><a class="text-body-tertiary small">Accessories,</a></li>
+                                <li class="me-1"><a class="text-body-tertiary small">Shoes,</a></li>
+                                <li class="me-1"><a class="text-body-tertiary small">Women</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 p-2">
+                <div class="head mb-4 d-flex align-items-center justify-content-between">
+                    <h4 class="mb-0 me-2">Trending</h4>
+                    <div></div>
+                </div>
+                <img class="w-100 cursor-pointer" routerLink="/products" src="./assets/home-shop-1-banner-1.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+

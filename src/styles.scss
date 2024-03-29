@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+* {
+    transition: .6s !important;
+}
+
+::selection {
+    background-color: #0CC3CE;
+    color: #FFF;
+}
+
+span {
+    color: #0CC3CE;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    &:hover {
+        color: #0CC3CE !important;
+    }
+}

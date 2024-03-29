@@ -1,0 +1,20 @@
+.add-to-cart {
+    height: 40px;
+    background-color: #191919;
+    position: relative;
+    border: 1px solid #EEE;
+    .icon {
+        position: absolute;
+        right: 0;
+        height: 40px;
+        width: 40px;
+        border: 1px solid #eee;
+        
+    }
+
+    &:hover {
+        .icon {
+            background-color: #0CC3CE;
+        }
+    }
+}

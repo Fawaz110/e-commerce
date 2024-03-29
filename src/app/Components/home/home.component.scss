@@ -1,0 +1,136 @@
+header {
+    owl-carousel-o {
+        height: 40vh;
+    }
+
+    .display-1 {
+        font-weight: 700 !important;
+    }
+
+    h1,
+    p {
+
+        color: rgb(248, 249, 250);
+    }
+
+    .slide-1,
+    .slide-2,
+    .slide-3,
+    .slide-4 {
+        background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)) center no-repeat;
+        background-size: cover;
+        height: 70vh;
+    }
+
+    .slide-1 {
+        background-image: url("../../../assets/Home-Shop-Slider-1.jpg");
+    }
+
+    .slide-2 {
+        background-image: url("../../../assets/Home-Shop-Slider-2.jpg");
+    }
+
+    .slide-3 {
+        background-image: url("../../../assets/Home-Shop-Slider-3.jpg");
+    }
+
+    .slide-4 {
+        background-image: url("../../../assets/Home-Shop-Slider-4.jpg");
+    }
+
+    .row {
+        .col-md-2 {
+            .cat {
+                &:hover {
+                    .content {
+                        left: -50%;
+
+                        p {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            .content {
+                height: 102%;
+                width: 200%;
+                transform: skewX(-40deg);
+                left: 130%;
+                transition: .6s;
+                transition: left .6s !important;
+
+                p {
+                    transform: skewX(40deg);
+                    transition-delay: .6s !important;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
+
+.on-sale {
+    background-color: #0CC3CE;
+    top: 0;
+    right: 0;
+}
+
+.btn-1,
+.btn-2 {
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: 700;
+    color: rgb(248, 249, 250);
+}
+
+.btn-1 {
+    background-color: #0CC3CE;
+    border: 2px solid #0CC3CE;
+
+    &:hover {
+        background-color: black;
+        border: 2px solid black;
+    }
+}
+
+.btn-2 {
+    padding: 15px 20px;
+    border: 2px solid rgb(248, 249, 250);
+
+    &:hover {
+        background-color: #0CC3CE;
+        border: 2px solid #0CC3CE;
+    }
+}
+
+.shop-now {
+    &:hover {
+        background-color: black;
+    }
+}
+
+.limited {
+    background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url("../../../assets/home-shop-1-parallax.jpg") no-repeat center;
+    background-size: cover;
+
+    h2 {
+        font-weight: 600;
+    }
+
+    p {
+        font-size: 2rem;
+    }
+}
+
+.free-banner {
+    background: url("../../../assets/home-shop-1-image-6.jpg") no-repeat center;
+}
+
+.head {
+    div {
+        height: 1px;
+        background-color: #3e3e3e;
+        flex: 1 1 auto;
+    }
+}
