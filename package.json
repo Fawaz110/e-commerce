@@ -25,6 +25,7 @@
     "@popperjs/core": "^2.11.6",
     "angularx-social-login": "^4.1.0",
     "bootstrap": "^5.3.1",
+    "gsap": "^3.12.5",
     "jwt-decode": "^3.1.2",
     "ngx-owl-carousel-o": "^16.0.0",
     "ngx-spinner": "^16.0.2",

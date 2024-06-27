@@ -1,18 +1,25 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { ProductsService } from 'src/app/Core/Services/products.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { auto } from '@popperjs/core';
 import { CategoriesService } from 'src/app/Core/Services/categories.service';
+import gsap from 'gsap';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit {
   constructor(private _ProductsService: ProductsService, private _CategoriesService: CategoriesService) {
     this.getAllProducts()
     this.getAllCategories()
+  }
+  initScrollTrigger() {
+    
+  }
+  ngAfterViewInit(): void {
+    this.initScrollTrigger()
   }
 
   products!: object[]
@@ -82,6 +89,6 @@ export class HomeComponent {
       }
     },
     nav: false,
-    lazyLoad:true
+    lazyLoad: true
   }
 }
