@@ -1,9 +1,10 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { ProductsService } from 'src/app/Core/Services/products.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { auto } from '@popperjs/core';
 import { CategoriesService } from 'src/app/Core/Services/categories.service';
 import gsap from 'gsap';
+
+// gsap.registerPlugin(ScrollTrigger)
 
 @Component({
   selector: 'app-home',
@@ -15,11 +16,30 @@ export class HomeComponent implements AfterViewInit {
     this.getAllProducts()
     this.getAllCategories()
   }
-  initScrollTrigger() {
-    
-  }
+  // initScrollTrigger() {
+  //   const t = gsap.to('.new-products', {
+  //     scrollTrigger: {
+  //       trigger: '.new-products',
+  //       scrub: true
+  //     },
+  //     duration: 2,
+  //     opacity: 1,
+  //     scale: 1,
+  //     animationDelay: 2
+  //   })
+  // }
+  // initialAnimation() {
+  //   const t = gsap.from('.new-products', {
+  //     duration: 0.5,
+  //     opacity: 0,
+  //     y: -20,
+  //     stagger: 0.2,
+  //     delay: 0.5,
+  //   })
+  // }
   ngAfterViewInit(): void {
-    this.initScrollTrigger()
+    // this.initialAnimation()
+    // this.initScrollTrigger()
   }
 
   products!: object[]
